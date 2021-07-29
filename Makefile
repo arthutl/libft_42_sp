@@ -6,7 +6,7 @@
 #    By: arporto- <arporto-@student.42sp.org.b      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/27 23:37:42 by arporto-          #+#    #+#              #
-#    Updated: 2021/07/28 23:04:12 by arporto-         ###   ########.fr        #
+#    Updated: 2021/07/28 23:09:42 by arporto-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,3 +48,7 @@ clean:
 
 fclean:	clean
 	$(RM) $(NAME)
+
+re:	fclean all
+
+.PHONY: all clean fclean re
