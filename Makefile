@@ -6,7 +6,7 @@
 #    By: arporto- <arporto-@student.42sp.org.b      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/27 23:37:42 by arporto-          #+#    #+#              #
-#    Updated: 2021/07/28 22:07:24 by arporto-         ###   ########.fr        #
+#    Updated: 2021/07/28 23:04:12 by arporto-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC	= ft_isalnum.c ft_isdigit.c
 # Cria para todo arquivo .c um arquivo .o
 OBJ	= $(SRC:.c=.o)
 
+RM	= rm -f
 NAME	= libft.a
 
 #$@    Nome da regra. 
@@ -40,8 +41,10 @@ all:	$(NAME)
 
 
 $(NAME):	$(OBJ) libft.h
-		$(CC) $(CFLAGS) -o $(NAME) 
+		ar rc $(NAME) $(OBJ) 
 
 clean:	
-	rm $(OBJ)	
+	$(RM) $(OBJ)	
 
+fclean:	clean
+	$(RM) $(NAME)
